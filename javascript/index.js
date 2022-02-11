@@ -70,6 +70,7 @@ function setResetBtn() {
 // Start/Stop Button
 btnLeftElement.addEventListener('click', () => {
   if (btnLeftElement.classList.contains('start')) {
+    // chronometer.start();
     setStopBtn();
     setSplitBtn();
   } else {
