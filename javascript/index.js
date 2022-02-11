@@ -1,7 +1,14 @@
 const chronometer = new Chronometer();
+// chronometer.start();
+// chronometer.stop();
+// chronometer.reset();
 
 // get the buttons:
+
+// START & STOP
 const btnLeftElement = document.getElementById('btnLeft');
+
+// RESET & SPLIT
 const btnRightElement = document.getElementById('btnRight');
 
 // get the DOM elements that will serve us to display the time:
@@ -39,27 +46,42 @@ function clearSplits() {
 }
 
 function setStopBtn() {
-  // ... your code goes here
+  btnLeftElement.className = 'btn stop';
+  btnLeftElement.textContent = 'STOP';
 }
 
+// textContent:Sets or returns the textual content of a node and its descendants
+
 function setSplitBtn() {
-  // ... your code goes here
+  btnRightElement.className = 'btn split';
+  btnRightElement.textContent = 'SPLIT';
 }
 
 function setStartBtn() {
-  // ... your code goes here
+  btnLeftElement.className = 'btn start';
+  btnLeftElement.textContent = 'START';
 }
 
 function setResetBtn() {
-  // ... your code goes here
+  btnRightElement.className = 'btn reset';
+  btnRightElement.textContent = 'RESET';
 }
 
 // Start/Stop Button
 btnLeftElement.addEventListener('click', () => {
-  // ... your code goes here
+  if (btnLeftElement.classList.contains('start')) {
+    setStopBtn();
+    setSplitBtn();
+  } else {
+    setStartBtn();
+    setResetBtn();
+  }
 });
+
+//classList.	Returns the class name(s) of an element
+//contains(class)	Returns true if an element has the class, otherwise false.
 
 // Reset/Split Button
 btnRightElement.addEventListener('click', () => {
-  // ... your code goes here
+  // if(btnRightElement.classList.contains())
 });
